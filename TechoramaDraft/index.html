@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147518616-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-147518616-1');
+    </script>
+
+    <meta charset="utf-8">
+    <title>Begin Scavenger Hunt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+
+    <!-- Creates a cookie with "Path Number" being a random number between 1 and 4 to determine the exhibit order
+          Note: Different path routes are only implemented in the German version -->
+    <script>
+      function eraseCookie(name) {
+        document.cookie = name+'=; Max-Age=-99999999;';
+      }
+
+      eraseCookie("path");
+
+      function selectPath(name,days) {
+          var path = Math.floor(Math.random() * 4) + 1;
+          var expires = "";
+          if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + (path || "")  + expires + "; path=/";
+      }
+    </script>
+
+  </head>
+  <body id="grad">
+    <div class="flex">
+      <div class="container-fluid" >
+
+        <header id="main-header">
+          <h1>Technorama Hunt</h1>
+        </header>
+
+        <section>
+
+          <!-- Begin Scavenger Hunt in English (one route available) -->
+          <div class="well">
+            <p lang="en" id=mainText> Today at the Technorama you are going to discover many new things about the world around you, but it won't be easy! You'll have to understand each phenomenon to decipher your next destination. When you've finished finding each spot in this journey, something great will be waiting for you... Good luck! </p>
+          </div>
+          <a href="Clue1.html" class="btn btn-default btn-block" id=beginButton role="button" >Begin in English</a>
+
+          <!-- Begin Scavenger Hunt in German (four routes to avoid crowding) -->
+          <div class="well">
+            <p lang="de" id=mainText> Heute wirst du im Technorama viele neue Dinge über die Welt um dich herum entdecken, aber es wird nicht einfach sein! Du musst jedes Phänomen verstehen, um dein nächstes Ziel zu erreichen. Wenn du fertig bist, jeden Platz auf dieser Reise zu finden, wird etwas Großartiges auf dich warten..... Viel Glück! </p>
+          </div>
+          <a href="Clue1de.html" class="btn btn-default btn-block" id=beginButton onclick="selectPath('pathNum', 7)" role="button">Weiter auf Deutsch</a>
+
+      </div>
+    </div>
+  </body>
+</html>

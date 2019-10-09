@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147518616-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-147518616-1');
+    </script>
+
+    <meta charset="utf-8">
+    <title>Clue 1 German</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body id="grad">
+    <div class="flex">
+      <div class="container-fluid" >
+
+        <header id="main-header">
+          <h1>Hinweis 1</h1>
+        </header>
+
+        <section>
+
+          <!-- All the text starts out being hidden. The appropriate clue is revealed according to the Path number. -->
+          <div class="well">
+            <p id=cradle class="hidden mainText"> Es ist an der Zeit, nach Ihrem ersten Exponat zu suchen - dieses befindet sich im Bereich <b>Mechanik.</b> Hier ist ein Tipp: Suche nach den silbernen Kugeln, die in einer Linie hängen.</p>
+            <p id=string class="hidden mainText"> Es ist an der Zeit, nach Ihrem nächsten Exponat zu suchen - dieses befindet sich ebenfalls im Sektor <b>Mechanik</b>. Hier ist ein Hinweis: In der Nähe, wo die beiden Pendel verbunden sind, suche nach der weißen Schnur an der Wand! </p>
+            <p id=wheel class="hidden mainText"> Es ist an der Zeit, nach Ihrem nächsten Exponat zu suchen - dieses befindet sich ebenfalls im Sektor <b>Mechanik</b>. Hier ist ein Hinweis: Suche das Metallgestell mit zwei Fahrradrädern. </p>
+            <p id=pendel class="hidden mainText"> Es ist an der Zeit, nach Ihrem nächsten Exponat zu suchen - dieses befindet sich ebenfalls im Sektor <b>Mechanik</b>. Hier ist ein Hinweis: Diese drei Pendel hängen übereinander. </p>
+          </div>
+
+          <div class="panel panel-body">
+            <div class="media">
+              <div class="media-left">
+                <span class="glyphicon glyphicon-search"></span>
+              </div>
+              <div class="media-body">
+                <p>Sobald Sie das richtige Exponat gefunden haben, öffnen Sie Ihre Handykamera und scannen Sie den QR-Code, um zum nächsten Schritt zu gelangen.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- This will read the Cookie to reveal the clue associated with the path number the user is on.
+                If there is a problem getting the path number, it will default to path 4. -->
+          <script>
+            function getCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+              }
+              return null;
+            }
+
+            var path = getCookie("pathNum");
+            console.log(path);
+            if (path == 1) {
+              document.getElementById("string").classList.remove('hidden');
+            } else if (path == 2) {
+              document.getElementById("wheel").classList.remove('hidden');
+            } else if (path == 3) {
+              document.getElementById("cradle").classList.remove('hidden');
+            } else {
+              document.getElementById("pendel").classList.remove('hidden');
+            }
+
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>

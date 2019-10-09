@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147518616-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147518616-1');
+</script>
+    <meta charset="utf-8">
+    <title>Question6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+  </head>
+  <body id="grad">
+    <div class="flex">
+    <div class="container-fluid" >
+
+
+    <header id="main-header">
+      <h1>Good job!</h1>
+    </header>
+
+    <div class="progress" style="height:3px; background-color:gray;">
+  <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="41.6" aria-valuemin="0" aria-valuemax="100" style="width:41.6%">
+    <span class="sr-only">41.6% Complete</span>
+  </div>
+</div>
+
+    <section>
+        <div class="well">
+          <img class="img-responsive" src="images/Pendulum.jpg" alt="Newton's Cradle">
+        <p id=mainText> That’s right! The same principle applies here! Since one ball is hitting both sides, one ball from both sides will swing up. The momentum is still conserved in the collision. </p>
+          <p> <b> If a football and a table tennis ball are both moving with the same velocity, which ball has more momentum? </b> </p>
+      </div>
+
+  <div class="container-fluid">
+  <div class="row">
+      <a href="Clue3.html" class="btn btn-default btn-block" id=beginButton role="button">The football has more momentum </a>
+      <a href="Question6Incorrect.html" class="btn btn-default btn-block" id=beginButton role="button">Both balls have the same momentum</a>
+      <a href="Question6Incorrect.html" class="btn btn-default btn-block" id=beginButton role="button">The table tennis ball has more momentum</a>
+      <a href="Question6Incorrect.html" class="btn btn-default btn-block" id=beginButton role="button">Neither has momentum</a>
+    </div>
+  </div>
+
+  <script>
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    var path = getCookie("pathNum");
+    console.log(path);
+    if (path == 4) {
+      document.getElementById("nextButton").classList.add('hidden');
+      document.getElementById("completeButton").classList.remove('hidden');
+    }
+
+  </script>
+
+</div>
+
+    <footer id="main-footer">
+
+    </footer>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147518616-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-147518616-1');
+    </script>
+
+    <meta charset="utf-8">
+    <title>Question 3 German</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body id="grad">
+    <div class="flex">
+      <div class="container-fluid" >
+
+        <header id="main-header">
+          <h1>Du hast es geschafft!</h1>
+        </header>
+
+        <section>
+
+        <div class="well">
+          <img class="img-responsive" src="images/Pendulum.jpg" alt="pendulum">
+          <p id=mainText> Hier gilt das gleiche Prinzip! Da auf beiden Seiten jeweils eine Kugel aufprallt, schwingt eine Kugel auf beiden Seiten nach oben. Der Impuls beider Kugeln bleibt erhalten. </p>
+          <p> <b> Wenn sich ein Fußball und ein Tischtennisball mit der gleichen Geschwindigkeit bewegen, welcher Ball hat dann mehr Schwung? </b></p>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <a href="Clue4de.html" class="btn btn-block hidden beginButtonde" id=path1Button role="button">Der Fußball hat mehr Schwung. </a>
+            <a href="Completede.html" class="btn btn-default btn-block hidden beginButtonde" id=path2Button role="button">Der Fußball hat mehr Schwung. </a>
+            <a href="Clue2de.html" class="btn btn-block hidden beginButtonde" id=path3Button role="button">Der Fußball hat mehr Schwung. </a>
+            <a href="Clue3de.html" class="btn btn-default btn-block hidden beginButtonde" id=path4Button role="button">Der Fußball hat mehr Schwung. </a>
+
+            <a href="Question3Incorrectde.html" class="btn btn-block beginButtonde" role="button">Beide Bälle haben das gleiche Schwung.</a>
+            <a href="Question3Incorrectde.html" class="btn btn-block beginButtonde" role="button">Der Tischtennisball hat mehr Schwung.</a>
+            <a href="Question3Incorrectde.html" class="btn btn-block beginButtonde" role="button">Auch die Dynamik hat nicht zugenommen.</a>
+          </div>
+        </div>
+
+        <script>
+          function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1,c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+          }
+
+          var path = getCookie("pathNum");
+          console.log(path);
+          if (path == 1) {
+            document.getElementById("path1Button").classList.remove('hidden');
+          } else if (path == 2) {
+            document.getElementById("path2Button").classList.remove('hidden');
+          } else if (path == 3) {
+            document.getElementById("path3Button").classList.remove('hidden');
+          } else {
+            document.getElementById("path4Button").classList.remove('hidden');
+          }
+        </script>
+
+      </div>
+    </div>
+  </body>
+</html>
